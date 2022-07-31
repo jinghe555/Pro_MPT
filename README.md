@@ -67,11 +67,13 @@ Hex编码就是把一个8位的字节数据用两个十六进制数展示出来�
 **（3）HP编码**
 
 用于区分叶节点和扩展节点，把奇数路径变成偶数路径。如果有terminator（16）那么就去掉terminator。根据表格给key加上prefix。
+
 ![image](https://user-images.githubusercontent.com/104714591/182009480-a4ed19a2-3bfb-42f2-a592-97ae49ed883f.png)
 
 如果prefix是0x0或者0x2，加一个padding nibble 0 在prefix后面，所以最终应该是 0x00 和 0x20。原因是为了保证key（path）的长度为偶数。
 
 **（4）转换方式**
+
 ![image](https://user-images.githubusercontent.com/104714591/182009486-c1f9aaf3-f1b0-4f23-83e9-ea37e0693878.png)
 
 #### 4、特点
@@ -88,6 +90,7 @@ Hex编码就是把一个8位的字节数据用两个十六进制数展示出来�
 对于每个区块，不需要存储交易列表、回执列表等数据，只需存储区块头数据。可实现在非信任的环境中验证交易是否被收录在区块链账本上。
 
 **（3）结构图**
+
 ![image](https://user-images.githubusercontent.com/104714591/182009503-d2fc1e24-8cf8-4885-9ce9-acf819471b76.png)
 
 ### 三、操作
